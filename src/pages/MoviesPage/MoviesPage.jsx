@@ -3,7 +3,7 @@ import axios from 'axios';
 import MovieList from '../../components/MovieList/MovieList';
 
 
-const MoviesPage = () => {
+export default function MoviesPage  ()  {
     const [query, setQuery] = useState('');
     const [movies, setMovies] = useState([]);
 
@@ -30,6 +30,4 @@ const MoviesPage = () => {
             <MovieList movies={movies} />
         </div>
     );
-};
-
-export default MoviesPage;
+}

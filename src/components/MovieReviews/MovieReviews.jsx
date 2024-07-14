@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 
-const MovieReviews = () => {
+export default function  MovieReviews (){
     const { movieId } = useParams();
     const [reviews, setReviews] = useState([]);
 
@@ -41,6 +41,6 @@ const MovieReviews = () => {
             )}
         </div>
     );
-};
+}
 
-export default MovieReviews;
+

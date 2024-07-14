@@ -3,7 +3,7 @@ import { useParams, Link, Outlet, useNavigate, useLocation } from 'react-router-
 import axios from 'axios';
 
 
-const MovieDetailsPage = () => {
+export default function  MovieDetailsPage  ()  {
     const { movieId } = useParams();
     const [movie, setMovie] = useState(null);
     const navigate = useNavigate();
@@ -49,6 +49,5 @@ const MovieDetailsPage = () => {
             <Outlet />
         </div>
     );
-};
+}
 
-export default MovieDetailsPage;

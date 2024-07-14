@@ -3,7 +3,7 @@ import axios from 'axios';
 import MovieList from '../../components/MovieList/MovieList';
 
 
-const HomePage = () => {
+export default function  HomePage ()  {
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
@@ -29,6 +29,6 @@ const HomePage = () => {
             <MovieList movies={movies} />
         </div>
     );
-};
+}
 
-export default HomePage;
+

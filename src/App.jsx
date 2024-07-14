@@ -10,7 +10,7 @@ const NotFoundPage = lazy(() => import('./pages/NotFoundPage/NotFoundPage'));
 const MovieCast = lazy(() => import('./components/MovieCast/MovieCast'));
 const MovieReviews = lazy(() => import('./components/MovieReviews/MovieReviews'));
 
-const App = () => {
+export default function App () {
     return (
         <Router>
             <Navigation />
@@ -27,6 +27,6 @@ const App = () => {
             </Suspense>
         </Router>
     );
-};
+}
 
-export default App;
+

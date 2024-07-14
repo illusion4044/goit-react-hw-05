@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom';
 
 
-const MovieList = ({ movies }) => {
+export default function MovieList ({ movies })  {
     return (
         <ul>
             {movies.map(movie => (
@@ -12,6 +12,6 @@ const MovieList = ({ movies }) => {
             ))}
         </ul>
     );
-};
+}
 
-export default MovieList;
+
