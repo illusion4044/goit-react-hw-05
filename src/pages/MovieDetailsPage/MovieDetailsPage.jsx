@@ -1,13 +1,13 @@
-import  { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useParams, Link, Outlet, useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 
-
-export default function  MovieDetailsPage  ()  {
+export default function MovieDetailsPage() {
     const { movieId } = useParams();
     const [movie, setMovie] = useState(null);
     const navigate = useNavigate();
     const location = useLocation();
+    const previousLocation = useRef(location.state?.from);
 
     useEffect(() => {
         const fetchMovieDetails = async () => {
@@ -29,15 +29,15 @@ export default function  MovieDetailsPage  ()  {
     if (!movie) return <div>Loading...</div>;
 
     const goBack = () => {
-        if (location.state && location.state.from) {
-            navigate(location.state.from);
+        if (previousLocation.current) {
+            navigate(previousLocation.current);
         } else {
             navigate('/movies');
         }
     };
 
     return (
-        <div >
+        <div>
             <button onClick={goBack}>Go back</button>
             <h1>{movie.title}</h1>
             <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
@@ -50,4 +50,3 @@ export default function  MovieDetailsPage  ()  {
         </div>
     );
 }
-
