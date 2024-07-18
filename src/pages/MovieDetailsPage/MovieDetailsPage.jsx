@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { useParams, Link, Outlet, useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
+import css from './MovieDetailsPage.module.css';
 
 export default function MovieDetailsPage() {
     const { movieId } = useParams();
@@ -37,12 +38,12 @@ export default function MovieDetailsPage() {
     };
 
     return (
-        <div>
+        <div className={css.container}>
             <button onClick={goBack}>Go back</button>
-            <h1>{movie.title}</h1>
+            <h1 className={css.title}>{movie.title}</h1>
             <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
             <p>{movie.overview}</p>
-            <nav>
+            <nav className={css.nav}>
                 <Link to="cast">Cast</Link>
                 <Link to="reviews">Reviews</Link>
             </nav>
