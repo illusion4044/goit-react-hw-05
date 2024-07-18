@@ -1,7 +1,7 @@
 import  { useEffect, useState } from 'react';
 import axios from 'axios';
 import MovieList from '../../components/MovieList/MovieList';
-
+import css from './HomePage.module.css';
 
 export default function  HomePage ()  {
     const [movies, setMovies] = useState([]);
@@ -24,8 +24,8 @@ export default function  HomePage ()  {
     }, []);
 
     return (
-        <div>
-            <h1>Popular Movies</h1>
+        <div className={css.container}>
+            <h1 className={css.title}>Popular Movies</h1>
             <MovieList movies={movies} />
         </div>
     );
